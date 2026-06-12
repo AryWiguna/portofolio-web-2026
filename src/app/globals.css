@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+/* ===== Custom Theme Tokens (Tailwind v4) ===== */
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --color-accent: #2563EB;
+  --color-accent-hover: #1D4ED8;
+  --color-accent-light: #DBEAFE;
+}
+
+/* ===== Light Theme (default) ===== */
+:root {
+  --color-bg: #FFFFFF;
+  --color-background: #FFFFFF;
+  --color-surface: #FAFAFA;
+  --color-surface-card: #FFFFFF;
+  --color-border: #E5E7EB;
+  --color-text-primary: #111827;
+  --color-text-secondary: #6B7280;
+  --color-text-tertiary: #9CA3AF;
+  --color-nav-bg: rgba(255, 255, 255, 0.8);
+  --color-nav-mobile-bg: rgba(255, 255, 255, 0.95);
+  --color-pill-bg: #FFFFFF;
+  --color-filter-inactive-bg: #FFFFFF;
+}
+
+/* ===== Dark Theme ===== */
+.dark {
+  --color-bg: #0B0F1A;
+  --color-background: #0B0F1A;
+  --color-surface: #111827;
+  --color-surface-card: #1F2937;
+  --color-border: #374151;
+  --color-text-primary: #F9FAFB;
+  --color-text-secondary: #9CA3AF;
+  --color-text-tertiary: #6B7280;
+  --color-nav-bg: rgba(11, 15, 26, 0.8);
+  --color-nav-mobile-bg: rgba(17, 24, 39, 0.95);
+  --color-pill-bg: #1F2937;
+  --color-filter-inactive-bg: #1F2937;
+}
+
+/* ===== Base Resets & Defaults ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-tertiary);
+}
+
+/* ===== Testimonials Auto-Scroll ===== */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
