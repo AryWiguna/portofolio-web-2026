@@ -1,23 +1,28 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Github, ArrowUpRight } from "lucide-react";
+import { Mail, Linkedin, Github, ArrowUpRight, Instagram } from "lucide-react";
 
 const socials = [
   {
     label: "GitHub",
-    href: "https://github.com",
+    href: "https://github.com/AryWiguna",
     icon: Github,
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/in/ary-wiguna-97716b370?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
     icon: Linkedin,
   },
   {
     label: "Email",
-    href: "mailto:hello@arywiguna.dev",
+    href: "mailto:arywiguna206@gmail.com",
     icon: Mail,
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/arywiguna206/",
+    icon: Instagram,
   },
 ];
 
@@ -60,7 +65,7 @@ export function Contact() {
           className="mt-10"
         >
           <a
-            href="mailto:hello@arywiguna.dev"
+            href="mailto:arywiguna206@gmail.com"
             className="inline-flex items-center gap-2 px-8 py-3.5 bg-accent text-white text-sm font-semibold rounded-full hover:bg-accent-hover shadow-lg shadow-accent/25 hover:shadow-accent/40 transition-all duration-300"
           >
             <Mail size={17} />

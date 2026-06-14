@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, FileText } from "lucide-react";
 import Image from "next/image";
 import type { Project } from "@/data/projects";
 
@@ -11,6 +11,8 @@ type ProjectCardProps = {
 };
 
 export function ProjectCard({ project, onSelect }: ProjectCardProps) {
+  const isPdf = project.image?.endsWith('.pdf');
+
   return (
     <motion.article
       layout
@@ -27,7 +29,7 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
     >
       {/* Thumbnail */}
       <div className="relative aspect-video bg-gradient-to-br from-accent/5 to-accent/10 overflow-hidden group">
-        {project.image ? (
+        {project.image && !isPdf ? (
           <Image
             src={project.image}
             alt={project.title}
@@ -47,9 +49,16 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
             />
             {/* Project initial as placeholder */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-5xl font-black text-accent/10 group-hover:text-accent/20 transition-colors duration-300 select-none">
-                {project.title.charAt(0)}
-              </span>
+              {isPdf ? (
+                <div className="flex flex-col items-center gap-2 text-accent/40 group-hover:text-accent/60 transition-colors duration-300">
+                  <FileText size={48} />
+                  <span className="font-bold tracking-wider">PDF Document</span>
+                </div>
+              ) : (
+                <span className="text-5xl font-black text-accent/10 group-hover:text-accent/20 transition-colors duration-300 select-none">
+                  {project.title.charAt(0)}
+                </span>
+              )}
             </div>
           </>
         )}

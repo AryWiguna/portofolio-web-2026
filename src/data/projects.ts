@@ -6,7 +6,7 @@ export type Project = {
   longDescription?: string;
   challenge?: string;
   solution?: string;
-  category: "Front-End" | "UI/UX" | "Local AI" | "Fullstack Web" | "Mobile App Development" | "Digital Forensics";
+  category: "Front-End" | "UI/UX" | "Local AI" | "Fullstack Web" | "Mobile App Development" | "Digital Forensics" | "Computer Vision & AI" | "Network Administration";
   techStack: string[];
   image: string;
   images?: string[];
@@ -76,8 +76,8 @@ export const projects: Project[] = [
     solution:
       "Mengembangkan aplikasi mobile dengan fokus pada UI/UX yang bersih dan proses input data yang cepat. Menyediakan kategorisasi transaksi yang jelas (Makanan, Gaji, Transportasi, dll), dan mengimplementasikan penyimpanan lokal (Local Storage). Untuk mempermudah evaluasi keuangan, ditambahkan fitur ringkasan metrik dan grafik visual yang mudah dibaca.",
     category: "Mobile App Development",
-    techStack: ["Flutter", "Dart", "Local Storage", "UI/UX Design", "Mobile App Development"],
-    image: "/projects/cashyapps1.png",
+    techStack: ["Flutter", "Dart", "Local Storage", "UI/UX Design", "Mobile App Development", "Front-end"],
+    image: "/projects/cashyapps6.png",
     images: [
       "/projects/cashyapps1.png",
       "/projects/cashyapps2.png",
@@ -136,40 +136,45 @@ export const projects: Project[] = [
   },
   {
     id: 6,
-    title: "E-Health Mobile App",
-    year: "2024",
-    description:
-      "A mobile health appointment booking experience redesigned from scratch, improving task completion rate by 60% through simplified user flows.",
+    title: "Space Gesture Controller",
+    year: "2026",
+   description:
+    "Aplikasi computer vision interaktif yang menerjemahkan gestur tangan secara real-time menjadi partikel visual dan bentuk dinamis menggunakan OpenCV dan MediaPipe.",
     longDescription:
-      "A complete mobile UX redesign for a local health clinic's appointment booking system. The project involved contextual user interviews, journey mapping, and iterative prototyping across 4 design sprints. The final design reduced the booking flow from 8 screens to 3 while maintaining all functionality.",
+    "Proyek ini mengeksplorasi interaksi manusia-komputer dengan memanfaatkan pelacakan tangan untuk mengontrol elemen visual di layar. Dibangun menggunakan Python, sistem ini menangkap tangkapan webcam melalui OpenCV, memproses landmark (titik referensi) tangan yang kompleks menggunakan MediaPipe, dan merender grafis berbasis partikel interaktif menggunakan Pygame. Sistem ini dapat beralih dengan mulus di antara berbagai mode visual—seperti bentuk Saturnus 3D, hati dari partikel, dan teks kustom—berdasarkan kombinasi jari tertentu (misalnya, 1 jari, 3 jari, atau kepalan tangan).",
     challenge:
-      "The existing booking app had a 40% drop-off rate at the doctor selection step, with users reporting confusion about availability, specializations, and the overall booking flow.",
+    "Memastikan performa real-time tanpa lag sambil secara bersamaan menangkap frame video, menghitung koordinat landmark tangan, dan merender ratusan partikel dinamis dalam loop tampilan Pygame.",
     solution:
-      "Redesigned the flow with smart defaults, inline calendar availability, doctor cards with reviews, and a progress indicator. Usability testing showed 60% improvement in task completion rate.",
-    category: "UI/UX",
-    techStack: ["Figma", "Wireframing", "Usability Testing"],
-    image: "/projects/ehealth.webp",
+    "Mengimplementasikan logika pengenalan gestur yang efisien dengan menganalisis koordinat node dari MediaPipe untuk menghitung jari yang terangkat secara akurat. Mengoptimalkan loop rendering partikel Pygame untuk mempertahankan frame rate yang mulus di semua mode visual.",
+    category: "Computer Vision & AI",
+    techStack: ["Python", "OpenCV", "MediaPipe", "Pygame"],
+    image: "/projects/projectpython1.png",
+    images: [
+      "/projects/projectpython1.png",
+      "/projects/projectpython2.png",
+      "/projects/projectpython3.png",
+    ],
     github: "https://github.com",
-    demo: "https://demo.com",
+    demo: "https://demo.com"
   },
   {
-    id: 7,
-    title: "E-Health Mobile App",
-    year: "2024",
-    description:
-      "A mobile health appointment booking experience redesigned from scratch, improving task completion rate by 60% through simplified user flows.",
-    longDescription:
-      "A complete mobile UX redesign for a local health clinic's appointment booking system. The project involved contextual user interviews, journey mapping, and iterative prototyping across 4 design sprints. The final design reduced the booking flow from 8 screens to 3 while maintaining all functionality.",
-    challenge:
-      "The existing booking app had a 40% drop-off rate at the doctor selection step, with users reporting confusion about availability, specializations, and the overall booking flow.",
-    solution:
-      "Redesigned the flow with smart defaults, inline calendar availability, doctor cards with reviews, and a progress indicator. Usability testing showed 60% improvement in task completion rate.",
-    category: "UI/UX",
-    techStack: ["Figma", "Wireframing", "Usability Testing"],
-    image: "/projects/ehealth.webp",
-    github: "https://github.com",
-    demo: "https://demo.com",
+  id: 7,
+  title: "Enterprise Network Infrastructure Design",
+  year: "2026",
+  description:
+    "Perancangan dan konfigurasi topologi jaringan komputer yang komprehensif, mencakup implementasi routing, switching, dan manajemen alamat IP (Subnetting).",
+  longDescription:
+    "Proyek ini didasarkan pada implementasi praktis administrasi jaringan, di mana saya merancang, mengonfigurasi, dan melakukan troubleshooting infrastruktur jaringan dari awal. Prosesnya meliputi pembuatan desain topologi, perhitungan dan alokasi IP Address (IPv4), konfigurasi VLAN pada switch untuk segmentasi keamanan jaringan, serta pengaturan routing statis/dinamis untuk menghubungkan berbagai subnet. Seluruh konfigurasi didokumentasikan dan diuji untuk memastikan sistem berjalan sesuai dengan standar operasional jaringan.",
+  challenge:
+    "Menghubungkan berbagai segmen jaringan (VLAN) yang berbeda agar dapat saling berkomunikasi dengan lancar, serta merancang skema pengalamatan IP yang efisien untuk menghindari pemborosan alokasi IP (IP exhaustion) dan bentrokan alamat (IP conflict).",
+  solution:
+    "Menerapkan metode perhitungan subnetting yang presisi untuk efisiensi ruang IP, dan mengonfigurasi Inter-VLAN Routing pada router agar perangkat di segmen yang berbeda dapat saling bertukar data. Pengujian konektivitas end-to-end dilakukan secara menyeluruh untuk memverifikasi bahwa seluruh topologi jaringan stabil dan aman.",
+  category: "Network Administration",
+  techStack: ["Cisco Packet Tracer", "Routing & Switching", "VLAN", "Subnetting", "Network Troubleshooting"],
+  image: "/projects/Network Infrastructure Design.pdf",
+  github: "https://github.com",
+  demo: "https://demo.com"
   },
 ];
 
-export const categories = ["All", "Front-End", "UI/UX", "Local AI", "Fullstack Web", "Mobile App Development", "Digital Forensics"] as const;
+export const categories = ["All", "Front-End", "UI/UX", "Local AI", "Fullstack Web", "Mobile App Development", "Digital Forensics", "Computer Vision & AI"] as const;
