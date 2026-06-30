@@ -6,7 +6,7 @@ export type Project = {
   longDescription?: string;
   challenge?: string;
   solution?: string;
-  category: "Front-End" | "UI/UX" | "Local AI" | "Fullstack Web" | "Mobile App Development" | "Digital Forensics" | "Computer Vision & AI" | "Network Administration";
+  category: "Fullstack Web" | "Mobile App Development" | "Computer Vision & AI" | "Digital Forensics" | "Network Administration";
   techStack: string[];
   image: string;
   images?: string[];
@@ -200,4 +200,4 @@ export const caseBases: Project[] = [
 },
 ];
 
-export const categories = ["All", "Front-End", "UI/UX", "Local AI", "Fullstack Web", "Mobile App Development", "Digital Forensics", "Computer Vision & AI", "Network Administration"] as const;
+export const categories = ["All", "Fullstack Web", "Mobile App Development", "Computer Vision & AI", "Digital Forensics", "Network Administration"] as const;
