@@ -108,7 +108,7 @@ export const certificates: Certificate[] = [
       "Telah berhasil menyelesaikan seluruh persyaratan dan diakui secara resmi sebagai Android Development Associate oleh Logical Operations. Sertifikasi ini divalidasi pada tanggal 20 Mei 2026 dan menjadi bukti penguasaan standar industri dalam pengembangan aplikasi seluler untuk ekosistem Android.",
     category: "Certification",
     skills: ["Android Development", "Mobile App Development", "UI/UX Mobile"],
-    image: "/certificate/sertifikat7.png", // Sesuaikan nama file gambarnya
+    image: "/certificate/sertifikat7.png",
     credentialUrl: "#", // Anda bisa mengubahnya menjadi link verifikasi jika ada, atau menaruh Credential ID: 184967898 di UI website Anda
   },
   {
@@ -130,6 +130,27 @@ export const certificates: Certificate[] = [
   image: "/certificate/sertifikat8.png",
   credentialUrl: "#"
   },
+  {
+  id: 10,
+  title: "Sertifikat Pembimbing Tim STIKOM BALI UX UMDARA - GEMASTIK XVIII",
+  issuer: "Kementerian Pendidikan Tinggi, Sains, dan Teknologi RI & Universitas Telkom",
+  date: "Oktober 2025",
+  description: "Berpartisipasi sebagai pengembang web dalam Tim UX UMDARA yang mewakili STIKOM Bali pada ajang tingkat nasional GEMASTIK XVIII.",
+  longDescription: "Berperan langsung dalam pengembangan antarmuka dan sistem web untuk proyek UMDARA (UMKM Daerah Rural) yang diikutsertakan pada Pagelaran Mahasiswa Tingkat Nasional Bidang Teknologi Informasi dan Komunikasi (GEMASTIK) XVIII Tahun 2025. Sertifikat ini merupakan dokumen resmi keikutsertaan tim di bawah bimbingan I Made Pradipta, a.Md., S.Kom., M.Kom yang diselenggarakan di Universitas Telkom pada 27-30 Oktober 2025.",
+  category: "Certification",
+  skills: [
+    "Team Leadership",
+    "UI/UX Design",
+    "Project Management",
+    "Frontend Development",
+    "UX/UI Research",
+    "Web Development",
+    "Team Collaboration",
+    "Problem Solving",
+  ],
+  image: "/certificate/sertifikat9.jpeg", 
+  credentialUrl: "#"
+},
 ];
 
 export const certCategories = ["All", "Bootcamp", "Course", "Award", "Other", "Certification","Committee / Volunteer"] as const;

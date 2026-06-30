@@ -132,7 +132,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                           e.stopPropagation();
                           setCurrentImageIndex((prev) => (prev === 0 ? project.images!.length - 1 : prev - 1));
                         }}
-                        className="absolute left-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/40 text-white hover:bg-black/60 transition-colors opacity-0 group-hover:opacity-100 z-10"
+                        className="absolute left-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/40 text-white hover:bg-black/60 transition-colors opacity-100 md:opacity-0 group-hover:opacity-100 z-10"
                       >
                         <ChevronLeft size={20} />
                       </button>
@@ -141,7 +141,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                           e.stopPropagation();
                           setCurrentImageIndex((prev) => (prev === project.images!.length - 1 ? 0 : prev + 1));
                         }}
-                        className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/40 text-white hover:bg-black/60 transition-colors opacity-0 group-hover:opacity-100 z-10"
+                        className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/40 text-white hover:bg-black/60 transition-colors opacity-100 md:opacity-0 group-hover:opacity-100 z-10"
                       >
                         <ChevronRight size={20} />
                       </button>
@@ -380,7 +380,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                       e.stopPropagation();
                       setCurrentImageIndex((prev) => (prev === 0 ? project.images!.length - 1 : prev - 1));
                     }}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/40 text-white hover:bg-black/60 transition-colors opacity-0 group-hover/lightbox:opacity-100 z-20"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/40 text-white hover:bg-black/60 transition-colors opacity-100 md:opacity-0 group-hover/lightbox:opacity-100 z-20"
                   >
                     <ChevronLeft size={24} />
                   </button>
@@ -389,7 +389,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                       e.stopPropagation();
                       setCurrentImageIndex((prev) => (prev === project.images!.length - 1 ? 0 : prev + 1));
                     }}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/40 text-white hover:bg-black/60 transition-colors opacity-0 group-hover/lightbox:opacity-100 z-20"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/40 text-white hover:bg-black/60 transition-colors opacity-100 md:opacity-0 group-hover/lightbox:opacity-100 z-20"
                   >
                     <ChevronRight size={24} />
                   </button>

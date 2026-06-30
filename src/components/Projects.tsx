@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { projects, categories, type Project } from "@/data/projects";
+import { projects, caseBases, categories, type Project } from "@/data/projects";
 import { ProjectCard } from "@/components/ProjectCard";
 import { ProjectModal } from "@/components/ProjectModal";
 
@@ -90,6 +90,47 @@ export function Projects() {
               {filtered.map((project) => (
                 <ProjectCard
                   key={project.id}
+                  project={project}
+                  onSelect={setSelectedProject}
+                />
+              ))}
+            </AnimatePresence>
+          </motion.div>
+
+          {/* Section Header for Case Base */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12 mt-32"
+          >
+            <span className="text-xs font-semibold tracking-widest uppercase text-accent">
+              Forensics & Networking
+            </span>
+            <h2
+              className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight"
+              style={{ color: "var(--color-text-primary)" }}
+            >
+              Selected Case Base
+            </h2>
+            <p
+              className="mt-4 max-w-lg mx-auto"
+              style={{ color: "var(--color-text-secondary)" }}
+            >
+              A deeper look into digital forensics investigations and enterprise network administration cases.
+            </p>
+          </motion.div>
+
+          {/* Case Base Grid */}
+          <motion.div
+            layout
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            <AnimatePresence mode="popLayout">
+              {caseBases.map((project) => (
+                <ProjectCard
+                  key={`casebase-${project.id}`}
                   project={project}
                   onSelect={setSelectedProject}
                 />

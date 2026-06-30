@@ -91,6 +91,32 @@ export const projects: Project[] = [
   },
   {
     id: 4,
+    title: "Space Gesture Controller",
+    year: "2026",
+   description:
+    "Aplikasi computer vision interaktif yang menerjemahkan gestur tangan secara real-time menjadi partikel visual dan bentuk dinamis menggunakan OpenCV dan MediaPipe.",
+    longDescription:
+    "Proyek ini mengeksplorasi interaksi manusia-komputer dengan memanfaatkan pelacakan tangan untuk mengontrol elemen visual di layar. Dibangun menggunakan Python, sistem ini menangkap tangkapan webcam melalui OpenCV, memproses landmark (titik referensi) tangan yang kompleks menggunakan MediaPipe, dan merender grafis berbasis partikel interaktif menggunakan Pygame. Sistem ini dapat beralih dengan mulus di antara berbagai mode visual—seperti bentuk Saturnus 3D, hati dari partikel, dan teks kustom—berdasarkan kombinasi jari tertentu (misalnya, 1 jari, 3 jari, atau kepalan tangan).",
+    challenge:
+    "Memastikan performa real-time tanpa lag sambil secara bersamaan menangkap frame video, menghitung koordinat landmark tangan, dan merender ratusan partikel dinamis dalam loop tampilan Pygame.",
+    solution:
+    "Mengimplementasikan logika pengenalan gestur yang efisien dengan menganalisis koordinat node dari MediaPipe untuk menghitung jari yang terangkat secara akurat. Mengoptimalkan loop rendering partikel Pygame untuk mempertahankan frame rate yang mulus di semua mode visual.",
+    category: "Computer Vision & AI",
+    techStack: ["Python", "OpenCV", "MediaPipe", "Pygame"],
+    image: "/projects/projectpython1.png",
+    images: [
+      "/projects/projectpython1.png",
+      "/projects/projectpython2.png",
+      "/projects/projectpython3.png",
+    ],
+    github: "https://github.com",
+    demo: "https://demo.com"
+  },
+];
+
+export const caseBases: Project[] = [
+  {
+    id: 1,
     title: "Investigasi Forensik Citra: Deteksi Manipulasi Laporan",
     year: "2026",
     description:
@@ -108,11 +134,11 @@ export const projects: Project[] = [
       "/projects/forensik1.jpg",
       "/projects/forensik2.jpg",
     ],
-    github: "", // Bisa dikosongkan atau diisi link laporan PDF jika ada
+    github: "",
     demo: "https://youtu.be/kkxJxYWEQiA"
   },
   {
-    id: 5,
+    id: 2,
     title: "Analisis Memori: Deteksi Backdoor Meterpreter",
     year: "2026",
     description:
@@ -135,46 +161,43 @@ export const projects: Project[] = [
     demo: ""
   },
   {
-    id: 6,
-    title: "Space Gesture Controller",
+    id: 3,
+    title: "Enterprise Network Infrastructure Design",
     year: "2026",
-   description:
-    "Aplikasi computer vision interaktif yang menerjemahkan gestur tangan secara real-time menjadi partikel visual dan bentuk dinamis menggunakan OpenCV dan MediaPipe.",
+    description:
+      "Perancangan dan konfigurasi topologi jaringan komputer yang komprehensif, mencakup implementasi routing, switching, dan manajemen alamat IP (Subnetting).",
     longDescription:
-    "Proyek ini mengeksplorasi interaksi manusia-komputer dengan memanfaatkan pelacakan tangan untuk mengontrol elemen visual di layar. Dibangun menggunakan Python, sistem ini menangkap tangkapan webcam melalui OpenCV, memproses landmark (titik referensi) tangan yang kompleks menggunakan MediaPipe, dan merender grafis berbasis partikel interaktif menggunakan Pygame. Sistem ini dapat beralih dengan mulus di antara berbagai mode visual—seperti bentuk Saturnus 3D, hati dari partikel, dan teks kustom—berdasarkan kombinasi jari tertentu (misalnya, 1 jari, 3 jari, atau kepalan tangan).",
+      "Proyek ini didasarkan pada implementasi praktis administrasi jaringan, di mana saya merancang, mengonfigurasi, dan melakukan troubleshooting infrastruktur jaringan dari awal. Prosesnya meliputi pembuatan desain topologi, perhitungan dan alokasi IP Address (IPv4), konfigurasi VLAN pada switch untuk segmentasi keamanan jaringan, serta pengaturan routing statis/dinamis untuk menghubungkan berbagai subnet. Seluruh konfigurasi didokumentasikan dan diuji untuk memastikan sistem berjalan sesuai dengan standar operasional jaringan.",
     challenge:
-    "Memastikan performa real-time tanpa lag sambil secara bersamaan menangkap frame video, menghitung koordinat landmark tangan, dan merender ratusan partikel dinamis dalam loop tampilan Pygame.",
+      "Menghubungkan berbagai segmen jaringan (VLAN) yang berbeda agar dapat saling berkomunikasi dengan lancar, serta merancang skema pengalamatan IP yang efisien untuk menghindari pemborosan alokasi IP (IP exhaustion) dan bentrokan alamat (IP conflict).",
     solution:
-    "Mengimplementasikan logika pengenalan gestur yang efisien dengan menganalisis koordinat node dari MediaPipe untuk menghitung jari yang terangkat secara akurat. Mengoptimalkan loop rendering partikel Pygame untuk mempertahankan frame rate yang mulus di semua mode visual.",
-    category: "Computer Vision & AI",
-    techStack: ["Python", "OpenCV", "MediaPipe", "Pygame"],
-    image: "/projects/projectpython1.png",
-    images: [
-      "/projects/projectpython1.png",
-      "/projects/projectpython2.png",
-      "/projects/projectpython3.png",
-    ],
+      "Menerapkan metode perhitungan subnetting yang presisi untuk efisiensi ruang IP, dan mengonfigurasi Inter-VLAN Routing pada router agar perangkat di segmen yang berbeda dapat saling bertukar data. Pengujian konektivitas end-to-end dilakukan secara menyeluruh untuk memverifikasi bahwa seluruh topologi jaringan stabil dan aman.",
+    category: "Network Administration",
+    techStack: ["Cisco Packet Tracer", "Routing & Switching", "VLAN", "Subnetting", "Network Troubleshooting"],
+    image: "/projects/Network Infrastructure Design.pdf",
     github: "https://github.com",
     demo: "https://demo.com"
   },
   {
-  id: 7,
-  title: "Enterprise Network Infrastructure Design",
+  id: 4,
+  title: "Penerapan Volatility dalam Memory Forensics",
   year: "2026",
-  description:
-    "Perancangan dan konfigurasi topologi jaringan komputer yang komprehensif, mencakup implementasi routing, switching, dan manajemen alamat IP (Subnetting).",
-  longDescription:
-    "Proyek ini didasarkan pada implementasi praktis administrasi jaringan, di mana saya merancang, mengonfigurasi, dan melakukan troubleshooting infrastruktur jaringan dari awal. Prosesnya meliputi pembuatan desain topologi, perhitungan dan alokasi IP Address (IPv4), konfigurasi VLAN pada switch untuk segmentasi keamanan jaringan, serta pengaturan routing statis/dinamis untuk menghubungkan berbagai subnet. Seluruh konfigurasi didokumentasikan dan diuji untuk memastikan sistem berjalan sesuai dengan standar operasional jaringan.",
-  challenge:
-    "Menghubungkan berbagai segmen jaringan (VLAN) yang berbeda agar dapat saling berkomunikasi dengan lancar, serta merancang skema pengalamatan IP yang efisien untuk menghindari pemborosan alokasi IP (IP exhaustion) dan bentrokan alamat (IP conflict).",
-  solution:
-    "Menerapkan metode perhitungan subnetting yang presisi untuk efisiensi ruang IP, dan mengonfigurasi Inter-VLAN Routing pada router agar perangkat di segmen yang berbeda dapat saling bertukar data. Pengujian konektivitas end-to-end dilakukan secara menyeluruh untuk memverifikasi bahwa seluruh topologi jaringan stabil dan aman.",
-  category: "Network Administration",
-  techStack: ["Cisco Packet Tracer", "Routing & Switching", "VLAN", "Subnetting", "Network Troubleshooting"],
-  image: "/projects/Network Infrastructure Design.pdf",
-  github: "https://github.com",
-  demo: "https://demo.com"
-  },
+  description: "Analisis forensik digital pada memory dump (RAM) menggunakan framework Volatility untuk mendeteksi anomali, aktivitas mencurigakan, dan artefak malware tersembunyi pada sistem.",
+  longDescription: "Proyek investigasi keamanan siber yang berfokus pada teknik memory forensics. Dengan memanfaatkan Volatility Framework, dilakukan ekstraksi dan analisis data volatil dari dump memori (RAM) untuk mengidentifikasi proses yang berjalan, koneksi jaringan yang aktif, serta potensi injeksi kode. Proyek ini bertujuan untuk menyusun kronologi insiden (incident response) dan menemukan bukti digital (artefak) tanpa merusak integritas data asli dari sistem yang terdampak.",
+  challenge: "Mengekstrak dan menginterpretasikan raw data dari memory dump yang kompleks, serta mendeteksi teknik penghindaran (evasion) seperti proses yang disembunyikan (process hollowing atau DKOM) oleh rootkit maupun malware dari pemantauan sistem operasi standar.",
+  solution: "Memanfaatkan berbagai plugin analisis pada Volatility (seperti pslist, psscan, netscan, dan malfind) untuk mengidentifikasi anomali, membandingkan daftar proses aktif dengan memori yang tersembunyi, dan mengekstrak segmen memori mencurigakan guna menemukan Indikator Kompromi (IoC).",
+  category: "Digital Forensics",
+  techStack: [
+    "Volatility Framework",
+    "Memory Forensics",
+    "Incident Response",
+    "Malware Analysis",
+    "Command Line (CLI)"
+  ],
+  image: "/projects/PENERAPAN VOLATILITY DALAM MEMORY FORENSICS UPDATE (1).pdf",
+  github: "#", 
+  demo: "#" 
+},
 ];
 
-export const categories = ["All", "Front-End", "UI/UX", "Local AI", "Fullstack Web", "Mobile App Development", "Digital Forensics", "Computer Vision & AI"] as const;
+export const categories = ["All", "Front-End", "UI/UX", "Local AI", "Fullstack Web", "Mobile App Development", "Digital Forensics", "Computer Vision & AI", "Network Administration"] as const;
