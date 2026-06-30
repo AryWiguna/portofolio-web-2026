@@ -5,7 +5,7 @@ export type Certificate = {
   date: string;
   description: string;
   longDescription?: string;
-  category: "Bootcamp" | "Course" | "Award" | "Other" | "Certification" | "Committee / Volunteer";
+  category: "Bootcamp" | "Course" | "Award" | "Other" | "Certification" | "Committee / Volunteer" | "Seminar / Workshop";
   skills: string[];
   image: string;
   images?: string[];
@@ -151,6 +151,58 @@ export const certificates: Certificate[] = [
   image: "/certificate/sertifikat9.jpeg", 
   credentialUrl: "#"
 },
+{
+  id: 11,
+  title: "Certificate of Appreciation - Coinfest Asia 2024: Game Day",
+  issuer: "W3GG & Coinfest Asia",
+  date: "Agustus 2024",
+  description: "Penghargaan atas kontribusi aktif sebagai anggota komunitas dalam menyukseskan acara Coinfest Asia 2024: Game Day.",
+  longDescription: "Sertifikat penghargaan ini diberikan kepada I Komang Ary Wiguna atas kontribusinya sebagai anggota komunitas dalam acara Coinfest Asia 2024: Game Day yang diselenggarakan oleh W3GG pada 23 Agustus 2024. Penghargaan ini merupakan bentuk apresiasi atas dedikasi waktu, bakat, dan semangat belajar dalam menciptakan acara yang sukses dan berkesan.",
+  category: "Certification",
+  skills: [
+    "Community Engagement",
+    "Networking",
+    "Event Participation",
+    "Adaptability",
+    "Communication"
+  ],
+  image: "/certificate/sertifikat10.jpeg", 
+  credentialUrl: "#"
+},
+{
+  id: 12,
+  title: "Peserta Sosialisasi Apple Academy Developer",
+  issuer: "ITB STIKOM Bali Kampus Jimbaran",
+  date: "Oktober 2024",
+  description: "Sertifikat atas partisipasi sebagai peserta dalam kegiatan sosialisasi Apple Academy Developer yang diselenggarakan oleh ITB STIKOM Bali Kampus Jimbaran.",
+  longDescription: "Diberikan kepada I Komang Ary Wiguna atas partisipasinya sebagai peserta dalam kegiatan sosialisasi Apple Academy Developer. Acara ini diselenggarakan di Institut Teknologi dan Bisnis STIKOM Bali Kampus Jimbaran pada hari Selasa, 1 Oktober 2024. Nomor Sertifikat: 225/DIRKJ/WRII/ITBSTIKOM/X/24.",
+  category: "Seminar / Workshop",
+  skills: [
+    "Apple Developer Ecosystem",
+    "Continuous Learning",
+    "Seminar Participation",
+    "Networking"
+  ],
+  image: "/certificate/sertifikat11.png",
+  credentialUrl: "#"
+},
+{
+  id: 13,
+  title: "Peserta Seminar Nasional FASTTEKNO 2025",
+  issuer: "ITB STIKOM Bali",
+  date: "Mei 2025",
+  description: "Sertifikat atas partisipasi sebagai peserta dalam Seminar Nasional FASTTEKNO (Festival Teknologi) 2025.",
+  longDescription: "Diberikan kepada I Komang Ary Wiguna sebagai Peserta Seminar dalam Seminar Nasional FASTTEKNO (Festival Teknologi) 2025 dengan tema \"Exploring Beyond the Future World of Technology\" yang diselenggarakan oleh ITB STIKOM Bali pada tanggal 7 Mei 2025. Nomor Sertifikat: 5393/SRTF/KMHS/V/2025.",
+  category: "Seminar / Workshop",
+  skills: [
+    "Technology Trends",
+    "Continuous Learning",
+    "Seminar Participation",
+    "Networking"
+  ],
+  image: "/certificate/sertifikat12.png",
+  credentialUrl: "#"
+}
 ];
 
-export const certCategories = ["All", "Bootcamp", "Course", "Award", "Other", "Certification","Committee / Volunteer"] as const;
+export const certCategories = ["All", "Bootcamp", "Course", "Award", "Other", "Certification","Committee / Volunteer", "Seminar / Workshop"] as const;
