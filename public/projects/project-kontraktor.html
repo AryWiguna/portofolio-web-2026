@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TJG General Contractor | Membangun Visi, Mewujudkan Realita</title>
+    <meta name="description" content="Kontraktor Terpercaya untuk Renovasi, Bangun Baru, dan Konstruksi Sipil.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        tjg: {
+                            navy: '#0A192F',       /* Deep Navy Blue */
+                            navyLight: '#112240',  /* Lighter Navy */
+                            orange: '#FF6B00',     /* Safety Orange */
+                            orangeHover: '#e65c00',
+                            gray: '#8892b0',       /* Industrial Gray Text */
+                            light: '#E6F1FF'       /* Very Light Blue/White */
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Montserrat', 'sans-serif'],
+                        body: ['Roboto', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.7)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop')",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* --- Custom Utilities --- */
+        .glass-nav {
+            background: rgba(10, 25, 47, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .text-outline {
+            -webkit-text-stroke: 1px rgba(255,255,255,0.1);
+            color: transparent;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+        }
+
+        /* --- Scrollbar --- */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0A192F;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FF6B00;
+            border-radius: 4px;
+        }
+
+        /* --- Project Animation --- */
+        .project-item {
+            transition: all 0.3s ease-in-out;
+        }
+        .project-item.hidden {
+            display: none;
+        }
+        .project-item.show {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* --- Filter Button Styles --- */
+        .filter-btn {
+            transition: all 0.3s ease;
+            position: relative;
+            background-color: transparent;
+            color: #4b5563; /* Gray-600 */
+            border: 1px solid #d1d5db; /* Gray-300 */
+        }
+        .filter-btn:not(.active):hover {
+            border-color: #0A192F;
+            color: #0A192F;
+            background-color: rgba(10, 25, 47, 0.05);
+        }
+        /* Style Aktif yang Konsisten */
+        .filter-btn.active {
+            background-color: #0A192F !important;
+            color: #ffffff !important;
+            border-color: #0A192F !important;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        /* Mencegah konflik warna saat active di-hover/klik */
+        .filter-btn.active:hover, 
+        .filter-btn.active:active, 
+        .filter-btn.active:focus {
+            background-color: #0A192F !important;
+            color: #ffffff !important;
+            border-color: #0A192F !important;
+        }
+
+        .filter-btn:active { transform: scale(0.95); }
+        .filter-btn:focus { outline: none; }
+
+        /* --- Testimonial Animation --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-on-scroll {
+            opacity: 0; /* Hidden secara default */
+        }
+        
+        .is-visible {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Efek Hover Kartu Testimoni */
+        .testimonial-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        /* Kutipan Icon Dekorasi */
+        .quote-icon {
+            opacity: 0.1;
+            transition: all 0.5s ease;
+        }
+        .testimonial-card:hover .quote-icon {
+            opacity: 0.2;
+            transform: scale(1.2) rotate(-10deg);
+            color: #FF6B00;
+        }
+    </style>
+</head>
+<body class="font-body text-slate-700 bg-gray-50 selection:bg-tjg-orange selection:text-white overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 bg-transparent text-white">
+        <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="font-heading font-extrabold text-xl md:text-2xl tracking-tighter flex items-center gap-2">
+                <div class="w-8 h-8 md:w-10 md:h-10 bg-tjg-orange flex items-center justify-center rounded-sm text-white text-sm md:text-base">
+                    <i class="fa-solid fa-helmet-safety"></i>
+                </div>
+                <span>TJG <span class="text-tjg-orange">CONTRACTOR</span></span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-6 lg:gap-8 font-medium text-sm tracking-wide">
+                <a href="#home" class="hover:text-tjg-orange transition-colors">BERANDA</a>
+                <a href="#services" class="hover:text-tjg-orange transition-colors">LAYANAN</a>
+                <a href="#projects" class="hover:text-tjg-orange transition-colors">PROYEK</a>
+                <a href="#testimonials" class="hover:text-tjg-orange transition-colors">TESTIMONI</a>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="hidden md:block">
+                <a href="#contact" class="bg-tjg-orange hover:bg-tjg-orangeHover text-white px-5 py-2 md:px-6 md:py-2.5 rounded-sm font-bold text-xs md:text-sm uppercase tracking-wider transition-all shadow-lg shadow-orange-500/30">
+                    Minta Penawaran
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none p-2 text-white">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-tjg-navy border-t border-white/10 p-6 flex-col gap-4 shadow-xl">
+            <a href="#home" class="block text-white hover:text-tjg-orange py-2 border-b border-white/5">BERANDA</a>
+            <a href="#services" class="block text-white hover:text-tjg-orange py-2 border-b border-white/5">LAYANAN</a>
+            <a href="#projects" class="block text-white hover:text-tjg-orange py-2 border-b border-white/5">PROYEK</a>
+            <a href="#testimonials" class="block text-white hover:text-tjg-orange py-2 border-b border-white/5">TESTIMONI</a>
+            <a href="#contact" class="block bg-tjg-orange text-center text-white py-3 mt-4 rounded-sm font-bold shadow-md active:scale-95 transition-transform">Minta Penawaran</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <!-- PERBAIKAN: bg-scroll (untuk mobile) md:bg-fixed (untuk desktop) -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center bg-hero-pattern bg-cover bg-center bg-scroll md:bg-fixed bg-no-repeat text-center px-4 pt-20 md:pt-0">
+        <div class="relative z-10 max-w-4xl mx-auto" data-aos="fade-up">
+            <p class="text-tjg-orange font-bold tracking-[0.2em] mb-4 uppercase text-xs md:text-sm lg:text-base animate-pulse">
+                Professional General Contractor
+            </p>
+            <h1 class="font-heading font-black text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-white leading-tight mb-6">
+                MEMBANGUN VISI,<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">MEWUJUDKAN REALITA.</span>
+            </h1>
+            <p class="text-gray-300 text-base md:text-xl mb-8 md:mb-10 max-w-2xl mx-auto font-light px-2">
+                Mitra konstruksi terpercaya untuk renovasi, bangun baru, dan proyek sipil dengan standar industri modern.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto px-4 sm:px-0">
+                <a href="#projects" class="group bg-transparent border-2 border-white text-white px-8 py-3 rounded-sm font-bold hover:bg-white hover:text-tjg-navy transition-all duration-300 w-full sm:w-auto">
+                    Lihat Proyek Kami <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                <a href="https://wa.me/6281234567890" class="bg-tjg-orange text-white border-2 border-tjg-orange px-8 py-3 rounded-sm font-bold hover:bg-transparent hover:text-tjg-orange transition-all duration-300 shadow-lg shadow-orange-500/20 w-full sm:w-auto">
+                    <i class="fa-brands fa-whatsapp mr-2"></i> Konsultasi Gratis
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white animate-bounce hidden md:block">
+            <i class="fa-solid fa-chevron-down text-2xl opacity-50"></i>
+        </div>
+    </section>
+
+    <!-- Trust Stats Section -->
+    <section class="bg-tjg-navy py-12 md:py-16 text-white border-b border-white/5 relative overflow-hidden">
+        <!-- Decoration background -->
+        <div class="absolute top-0 right-0 opacity-5 text-7xl md:text-9xl font-heading font-bold select-none pointer-events-none text-outline">
+            STATS
+        </div>
+        
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-4 text-center divide-x-0 md:divide-x divide-white/10">
+                <div class="p-2 md:p-4">
+                    <i class="fa-solid fa-building-circle-check text-3xl md:text-4xl text-tjg-orange mb-3 md:mb-4"></i>
+                    <h3 class="text-3xl md:text-5xl font-bold font-heading mb-2 counter" data-target="150">0</h3>
+                    <p class="text-gray-400 text-xs md:text-sm uppercase tracking-wider">Proyek Selesai</p>
+                </div>
+                <div class="p-2 md:p-4">
+                    <i class="fa-solid fa-helmet-safety text-3xl md:text-4xl text-tjg-orange mb-3 md:mb-4"></i>
+                    <h3 class="text-3xl md:text-5xl font-bold font-heading mb-2 counter" data-target="12">0</h3>
+                    <p class="text-gray-400 text-xs md:text-sm uppercase tracking-wider">Tahun Pengalaman</p>
+                </div>
+                <div class="p-2 md:p-4">
+                    <i class="fa-solid fa-users text-3xl md:text-4xl text-tjg-orange mb-3 md:mb-4"></i>
+                    <h3 class="text-3xl md:text-5xl font-bold font-heading mb-2 counter" data-target="98">0</h3>
+                    <p class="text-gray-400 text-xs md:text-sm uppercase tracking-wider">% Klien Puas</p>
+                </div>
+                <div class="p-2 md:p-4">
+                    <i class="fa-solid fa-certificate text-3xl md:text-4xl text-tjg-orange mb-3 md:mb-4"></i>
+                    <h3 class="text-3xl md:text-5xl font-bold font-heading mb-2 counter" data-target="5">0</h3>
+                    <p class="text-gray-400 text-xs md:text-sm uppercase tracking-wider">Tahun Garansi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Expertise (Services) -->
+    <section id="services" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <span class="text-tjg-navy font-bold uppercase tracking-widest text-xs md:text-sm bg-gray-200 px-3 py-1 rounded-sm">Layanan Kami</span>
+                <h2 class="text-2xl md:text-4xl font-heading font-extrabold text-tjg-navy mt-4">Solusi Konstruksi <span class="text-tjg-orange">Terintegrasi</span></h2>
+                <div class="w-16 md:w-20 h-1.5 bg-tjg-orange mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Card 1 -->
+                <div class="group bg-white p-6 md:p-8 rounded-sm shadow-lg border-b-4 border-transparent hover:border-tjg-orange transition-all duration-300 card-hover">
+                    <div class="w-16 h-16 bg-tjg-navy/5 text-tjg-navy group-hover:bg-tjg-orange group-hover:text-white rounded-sm flex items-center justify-center text-3xl mb-6 transition-colors duration-300">
+                        <i class="fa-solid fa-house-chimney"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-tjg-navy mb-3 group-hover:text-tjg-orange transition-colors">Renovasi Hunian</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4 text-sm md:text-base">Transformasi rumah lama menjadi hunian modern, fungsional, dan estetis sesuai impian Anda.</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li><i class="fa-solid fa-check text-tjg-orange mr-2"></i>Interior & Eksterior</li>
+                        <li><i class="fa-solid fa-check text-tjg-orange mr-2"></i>Penambahan Lantai</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group bg-white p-6 md:p-8 rounded-sm shadow-lg border-b-4 border-transparent hover:border-tjg-orange transition-all duration-300 card-hover">
+                    <div class="w-16 h-16 bg-tjg-navy/5 text-tjg-navy group-hover:bg-tjg-orange group-hover:text-white rounded-sm flex items-center justify-center text-3xl mb-6 transition-colors duration-300">
+                        <i class="fa-solid fa-trowel-bricks"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-tjg-navy mb-3 group-hover:text-tjg-orange transition-colors">Bangun Baru</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4 text-sm md:text-base">Konstruksi dari nol dengan perencanaan matang, material terbaik, dan struktur tahan gempa.</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li><i class="fa-solid fa-check text-tjg-orange mr-2"></i>Rumah Tinggal</li>
+                        <li><i class="fa-solid fa-check text-tjg-orange mr-2"></i>Ruko & Komersial</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group bg-white p-6 md:p-8 rounded-sm shadow-lg border-b-4 border-transparent hover:border-tjg-orange transition-all duration-300 card-hover">
+                    <div class="w-16 h-16 bg-tjg-navy/5 text-tjg-navy group-hover:bg-tjg-orange group-hover:text-white rounded-sm flex items-center justify-center text-3xl mb-6 transition-colors duration-300">
+                        <i class="fa-solid fa-industry"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-tjg-navy mb-3 group-hover:text-tjg-orange transition-colors">Konstruksi Sipil & Baja</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4 text-sm md:text-base">Spesialisasi dalam struktur baja berat, gudang, dan pekerjaan sipil skala menengah ke atas.</p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li><i class="fa-solid fa-check text-tjg-orange mr-2"></i>Gudang & Pabrik</li>
+                        <li><i class="fa-solid fa-check text-tjg-orange mr-2"></i>Struktur Baja IWF</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects (Masonryish + Filter) -->
+    <section id="projects" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-end mb-12 text-center md:text-left">
+                <div class="mb-6 md:mb-0">
+                    <span class="text-tjg-orange font-bold uppercase tracking-widest text-xs md:text-sm">Portofolio</span>
+                    <h2 class="text-2xl md:text-4xl font-heading font-extrabold text-tjg-navy mt-2">Karya Terbaik TJG</h2>
+                </div>
+                
+                <!-- Filter Tabs -->
+                <div class="flex flex-wrap justify-center gap-2">
+                    <button class="filter-btn active px-4 py-2 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-bold" data-filter="all">Semua</button>
+                    <button class="filter-btn px-4 py-2 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-bold" data-filter="residential">Residential</button>
+                    <button class="filter-btn px-4 py-2 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-bold" data-filter="commercial">Commercial</button>
+                    <button class="filter-btn px-4 py-2 md:px-6 md:py-2 rounded-full text-xs md:text-sm font-bold" data-filter="industrial">Industrial</button>
+                </div>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project Items -->
+                <div class="project-item group relative overflow-hidden rounded-sm shadow-md" data-category="residential">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop" alt="Modern House" class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-tjg-navy/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="bg-tjg-orange text-white text-xs font-bold px-3 py-1 w-max rounded-sm mb-2">Residential</span>
+                        <h4 class="text-xl font-bold text-white">Villa Modern minimalist</h4>
+                        <p class="text-gray-300 text-sm mt-1"><i class="fa-solid fa-location-dot mr-1"></i> Jakarta Selatan | 2023</p>
+                    </div>
+                </div>
+
+                <div class="project-item group relative overflow-hidden rounded-sm shadow-md" data-category="industrial">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1000&auto=format&fit=crop" alt="Warehouse" class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-tjg-navy/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="bg-tjg-orange text-white text-xs font-bold px-3 py-1 w-max rounded-sm mb-2">Industrial</span>
+                        <h4 class="text-xl font-bold text-white">Konstruksi Gudang Logistik</h4>
+                        <p class="text-gray-300 text-sm mt-1"><i class="fa-solid fa-location-dot mr-1"></i> Cikarang | 2022</p>
+                    </div>
+                </div>
+
+                <div class="project-item group relative overflow-hidden rounded-sm shadow-md" data-category="commercial">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1000&auto=format&fit=crop" alt="Office" class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-tjg-navy/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="bg-tjg-orange text-white text-xs font-bold px-3 py-1 w-max rounded-sm mb-2">Commercial</span>
+                        <h4 class="text-xl font-bold text-white">Renovasi Kantor Startup</h4>
+                        <p class="text-gray-300 text-sm mt-1"><i class="fa-solid fa-location-dot mr-1"></i> BSD City | 2023</p>
+                    </div>
+                </div>
+
+                 <div class="project-item group relative overflow-hidden rounded-sm shadow-md" data-category="residential">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1000&auto=format&fit=crop" alt="Luxury Home" class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-tjg-navy/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="bg-tjg-orange text-white text-xs font-bold px-3 py-1 w-max rounded-sm mb-2">Residential</span>
+                        <h4 class="text-xl font-bold text-white">Luxury Tropical Home</h4>
+                        <p class="text-gray-300 text-sm mt-1"><i class="fa-solid fa-location-dot mr-1"></i> Bali | 2024</p>
+                    </div>
+                </div>
+
+                <div class="project-item group relative overflow-hidden rounded-sm shadow-md" data-category="commercial">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1000&auto=format&fit=crop" alt="Cafe" class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-tjg-navy/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="bg-tjg-orange text-white text-xs font-bold px-3 py-1 w-max rounded-sm mb-2">Commercial</span>
+                        <h4 class="text-xl font-bold text-white">Industrial Coffee Shop</h4>
+                        <p class="text-gray-300 text-sm mt-1"><i class="fa-solid fa-location-dot mr-1"></i> Bandung | 2022</p>
+                    </div>
+                </div>
+
+                 <div class="project-item group relative overflow-hidden rounded-sm shadow-md" data-category="industrial">
+                    <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?q=80&w=1000&auto=format&fit=crop" alt="Factory" class="w-full h-64 md:h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-tjg-navy/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="bg-tjg-orange text-white text-xs font-bold px-3 py-1 w-max rounded-sm mb-2">Industrial</span>
+                        <h4 class="text-xl font-bold text-white">Pabrik Tekstil Struktur Baja</h4>
+                        <p class="text-gray-300 text-sm mt-1"><i class="fa-solid fa-location-dot mr-1"></i> Solo | 2021</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-us" class="py-16 md:py-24 bg-tjg-navyLight text-white relative">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
+                <!-- Text Content -->
+                <div class="lg:w-1/2 order-2 lg:order-1">
+                    <h2 class="text-2xl md:text-4xl font-heading font-extrabold mb-6">Kenapa Memilih <span class="text-tjg-orange">TJG Contractor?</span></h2>
+                    <p class="text-gray-400 mb-8 leading-relaxed text-sm md:text-base">
+                        Kami mengerti bahwa konstruksi bukan hanya soal mendirikan bangunan, tapi tentang kepercayaan. Kami berkomitmen memberikan hasil terbaik dengan standar keamanan tinggi.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-tjg-orange/10 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-file-invoice-dollar text-tjg-orange text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg md:text-xl font-bold mb-1">Transparansi Harga</h4>
+                                <p class="text-xs md:text-sm text-gray-400">RAB (Rencana Anggaran Biaya) yang detail tanpa biaya tersembunyi.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-tjg-orange/10 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-stopwatch text-tjg-orange text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg md:text-xl font-bold mb-1">Tepat Waktu</h4>
+                                <p class="text-xs md:text-sm text-gray-400">Manajemen proyek yang disiplin menggunakan kurva-S untuk memantau progress.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-full bg-tjg-orange/10 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-layer-group text-tjg-orange text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg md:text-xl font-bold mb-1">Material Berkualitas & SNI</h4>
+                                <p class="text-xs md:text-sm text-gray-400">Kami tidak berkompromi soal kualitas bahan bangunan demi keamanan jangka panjang.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Side -->
+                <div class="lg:w-1/2 relative order-1 lg:order-2 w-full">
+                    <div class="absolute -top-4 -left-4 w-16 h-16 md:w-24 md:h-24 border-t-4 border-l-4 border-tjg-orange"></div>
+                    <div class="absolute -bottom-4 -right-4 w-16 h-16 md:w-24 md:h-24 border-b-4 border-r-4 border-tjg-orange"></div>
+                    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1470&auto=format&fit=crop" alt="Construction Worker" class="rounded-sm shadow-2xl grayscale hover:grayscale-0 transition-all duration-500 w-full object-cover h-64 md:h-[500px]">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Testimonials Section -->
+    <section id="testimonials" class="py-20 md:py-28 bg-gray-50 overflow-hidden">
+        <div class="container mx-auto px-6">
+            <!-- Header -->
+            <div class="text-center mb-16 animate-on-scroll">
+                <span class="text-tjg-orange font-bold uppercase tracking-widest text-xs md:text-sm">Suara Klien</span>
+                <h2 class="text-2xl md:text-4xl font-heading font-extrabold text-tjg-navy mt-4">Apa Kata Mereka?</h2>
+                <div class="w-20 h-1.5 bg-tjg-orange mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white p-8 rounded-sm shadow-lg border-t-4 border-tjg-navy relative animate-on-scroll" style="animation-delay: 0.1s;">
+                    <!-- Icon Quote Background -->
+                    <i class="fa-solid fa-quote-right absolute top-6 right-6 text-6xl text-gray-200 quote-icon"></i>
+                    
+                    <div class="flex items-center gap-4 mb-6 relative z-10">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client 1" class="w-14 h-14 rounded-full object-cover border-2 border-tjg-orange">
+                        <div>
+                            <h4 class="font-bold text-tjg-navy text-lg">Bpk. Hendra</h4>
+                            <p class="text-xs text-gray-500 font-bold uppercase">Renovasi Rumah, Jaksel</p>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-400 mb-4 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed relative z-10">
+                        "TJG sangat profesional. Renovasi rumah saya selesai lebih cepat 2 minggu dari jadwal. Hasil finishingnya rapih dan timnya sangat komunikatif saat ada perubahan desain."
+                    </p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white p-8 rounded-sm shadow-lg border-t-4 border-tjg-orange relative animate-on-scroll" style="animation-delay: 0.3s;">
+                    <i class="fa-solid fa-quote-right absolute top-6 right-6 text-6xl text-gray-200 quote-icon"></i>
+                    
+                    <div class="flex items-center gap-4 mb-6 relative z-10">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client 2" class="w-14 h-14 rounded-full object-cover border-2 border-tjg-navy">
+                        <div>
+                            <h4 class="font-bold text-tjg-navy text-lg">Ibu Sarah</h4>
+                            <p class="text-xs text-gray-500 font-bold uppercase">Pemilik Ruko, BSD</p>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-400 mb-4 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed relative z-10">
+                        "Membangun ruko komersial butuh ketepatan waktu agar bisnis bisa segera jalan. TJG membuktikan komitmen mereka. Struktur kokoh dan desain fasadnya modern sesuai request."
+                    </p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white p-8 rounded-sm shadow-lg border-t-4 border-tjg-navy relative animate-on-scroll" style="animation-delay: 0.5s;">
+                    <i class="fa-solid fa-quote-right absolute top-6 right-6 text-6xl text-gray-200 quote-icon"></i>
+                    
+                    <div class="flex items-center gap-4 mb-6 relative z-10">
+                        <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Client 3" class="w-14 h-14 rounded-full object-cover border-2 border-tjg-orange">
+                        <div>
+                            <h4 class="font-bold text-tjg-navy text-lg">Pak Wijaya</h4>
+                            <p class="text-xs text-gray-500 font-bold uppercase">Manager Logistik, Cikarang</p>
+                        </div>
+                    </div>
+                    <div class="flex text-yellow-400 mb-4 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed relative z-10">
+                        "Konstruksi gudang baja berat kami ditangani dengan safety yang sangat baik. Laporannya transparan dan strukturnya sangat solid. Recommended untuk proyek industri."
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Banner -->
+    <section class="py-16 bg-tjg-orange">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl md:text-3xl font-heading font-bold text-white mb-6">Siap Mewujudkan Proyek Impian Anda?</h2>
+            <div class="flex flex-col md:flex-row justify-center gap-4 w-full px-4 md:px-0">
+                <a href="#contact" class="bg-white text-tjg-orange px-8 py-3 rounded-sm font-bold shadow-lg hover:bg-gray-100 transition-colors uppercase tracking-wide w-full md:w-auto">
+                    Hubungi Kami
+                </a>
+                <a href="https://wa.me/6281234567890" class="border-2 border-white text-white px-8 py-3 rounded-sm font-bold hover:bg-white/10 transition-colors uppercase tracking-wide w-full md:w-auto">
+                    Chat WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-tjg-navy text-white pt-16 pb-8 border-t border-white/10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                
+                <!-- Col 1: Brand -->
+                <div>
+                    <a href="#" class="font-heading font-extrabold text-2xl tracking-tighter flex items-center gap-2 mb-6">
+                        <div class="w-8 h-8 bg-tjg-orange flex items-center justify-center rounded-sm text-white text-sm">
+                            <i class="fa-solid fa-helmet-safety"></i>
+                        </div>
+                        TJG <span class="text-tjg-orange">CONTRACTOR</span>
+                    </a>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Penyedia jasa konstruksi profesional yang mengutamakan kualitas, ketepatan waktu, dan kepuasan klien dalam setiap detail bangunan.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-tjg-orange transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-tjg-orange transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-tjg-orange transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold font-heading mb-6 border-l-4 border-tjg-orange pl-3">Akses Cepat</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="#home" class="hover:text-tjg-orange transition-colors">Beranda</a></li>
+                        <li><a href="#about" class="hover:text-tjg-orange transition-colors">Tentang Kami</a></li>
+                        <li><a href="#services" class="hover:text-tjg-orange transition-colors">Layanan</a></li>
+                        <li><a href="#projects" class="hover:text-tjg-orange transition-colors">Portofolio</a></li>
+                        <li><a href="#" class="hover:text-tjg-orange transition-colors">Karir</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Services -->
+                <div>
+                    <h4 class="text-lg font-bold font-heading mb-6 border-l-4 border-tjg-orange pl-3">Layanan</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-tjg-orange transition-colors">Renovasi Rumah</a></li>
+                        <li><a href="#" class="hover:text-tjg-orange transition-colors">Bangun Ruko</a></li>
+                        <li><a href="#" class="hover:text-tjg-orange transition-colors">Konstruksi Baja</a></li>
+                        <li><a href="#" class="hover:text-tjg-orange transition-colors">Desain Interior</a></li>
+                        <li><a href="#" class="hover:text-tjg-orange transition-colors">Pemeliharaan Gedung</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact -->
+                <div>
+                    <h4 class="text-lg font-bold font-heading mb-6 border-l-4 border-tjg-orange pl-3">Hubungi Kami</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-tjg-orange mt-1"></i>
+                            <span>Jl. Konstruksi Raya No. 88,<br>Kawasan Industri, Jakarta Barat</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-tjg-orange"></i>
+                            <span>info@tjgcontractor.com</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-tjg-orange"></i>
+                            <span>+62 812-3456-7890</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 text-center">
+                <p class="text-gray-500 text-sm">&copy; 2024 TJG General Contractor. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6281234567890" target="_blank" class="fixed bottom-6 right-6 z-50 group">
+        <div class="relative">
+            <div class="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-75"></div>
+            <div class="relative bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 transform group-hover:scale-110">
+                <i class="fa-brands fa-whatsapp text-3xl"></i>
+            </div>
+        </div>
+        <!-- Tooltip -->
+        <span class="absolute right-16 top-1/2 -translate-y-1/2 bg-white text-gray-800 px-3 py-1 rounded shadow-md text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap hidden md:block">
+            Hubungi Kami
+        </span>
+    </a>
+
+    <!-- JavaScript logic -->
+    <script>
+        // 1. Sticky Navbar Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('glass-nav', 'shadow-lg');
+                navbar.classList.remove('bg-transparent', 'py-4');
+                navbar.classList.add('py-2');
+            } else {
+                navbar.classList.remove('glass-nav', 'shadow-lg', 'py-2');
+                navbar.classList.add('bg-transparent', 'py-4');
+            }
+        });
+
+        // 2. Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        // 3. Counter Animation (Intersection Observer)
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200; // The lower the slower
+
+        const animateCounters = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = +counter.getAttribute('data-target');
+                    
+                    const updateCount = () => {
+                        const count = +counter.innerText;
+                        const inc = target / speed;
+
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count + inc);
+                            setTimeout(updateCount, 20);
+                        } else {
+                            counter.innerText = target + "+";
+                        }
+                    };
+                    updateCount();
+                    observer.unobserve(counter); // Only run once
+                }
+            });
+        };
+
+        const counterObserver = new IntersectionObserver(animateCounters, {
+            threshold: 0.5
+        });
+
+        counters.forEach(counter => {
+            counterObserver.observe(counter);
+        });
+
+        // 4. Project Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectItems = document.querySelectorAll('.project-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                projectItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.classList.remove('hidden');
+                        item.classList.add('show');
+                    } else {
+                        item.classList.add('hidden');
+                        item.classList.remove('show');
+                    }
+                });
+            });
+        });
+
+        // 5. NEW: Testimonial & Scroll Animation Trigger
+        const scrollElements = document.querySelectorAll(".animate-on-scroll");
+
+        const elementInView = (el, dividend = 1) => {
+            const elementTop = el.getBoundingClientRect().top;
+            return (
+                elementTop <=
+                (window.innerHeight || document.documentElement.clientHeight) / dividend
+            );
+        };
+
+        const displayScrollElement = (element) => {
+            element.classList.add("is-visible");
+        };
+
+        const handleScrollAnimation = () => {
+            scrollElements.forEach((el) => {
+                if (elementInView(el, 1.25)) {
+                    displayScrollElement(el);
+                }
+            });
+        };
+
+        window.addEventListener("scroll", () => { 
+            handleScrollAnimation();
+        });
+        
+        // Trigger once on load
+        handleScrollAnimation();
+
+    </script>
+</body>
+</html>

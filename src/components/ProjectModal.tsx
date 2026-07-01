@@ -15,7 +15,9 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
   const [isImageEnlarged, setIsImageEnlarged] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  const hasHtmlDemo = project?.demo?.endsWith('.html');
   const isPdf = project?.image?.endsWith('.pdf');
+  const isDocument = isPdf || hasHtmlDemo;
 
   useEffect(() => {
     if (project) {
@@ -96,9 +98,9 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             </button>
 
             {/* Thumbnail or PDF Viewer */}
-            <div className={`relative ${isPdf ? 'h-[60vh] sm:h-[70vh]' : 'aspect-video'} bg-gradient-to-br from-accent/5 to-accent/15 overflow-hidden rounded-t-2xl group`}>
-              {isPdf ? (
-                <iframe src={project!.image} className="w-full h-full border-0" title={project!.title} />
+            <div className={`relative ${isDocument ? 'h-[60vh] sm:h-[70vh]' : 'aspect-video'} bg-gradient-to-br from-accent/5 to-accent/15 overflow-hidden rounded-t-2xl group`}>
+              {isDocument ? (
+                <iframe src={isPdf ? project!.image : project!.demo} className="w-full h-full border-0" title={project!.title} />
               ) : project.image ? (
                 <>
                   <div 
@@ -323,7 +325,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
       {/* Image Lightbox */}
       <AnimatePresence>
-        {isImageEnlarged && project?.image && !isPdf && (
+        {isImageEnlarged && project?.image && !isDocument && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

@@ -6,7 +6,7 @@ export type Project = {
   longDescription?: string;
   challenge?: string;
   solution?: string;
-  category: "Fullstack Web" | "Mobile App Development" | "Computer Vision & AI" | "Digital Forensics" | "Network Administration";
+  category: "Front-end website" | "Fullstack Web" | "Mobile App Development" | "Computer Vision & AI" | "Digital Forensics" | "Network Administration" | "industrial";
   techStack: string[];
   image: string;
   images?: string[];
@@ -48,20 +48,20 @@ export const projects: Project[] = [
       "Platform hybrid commerce yang menggabungkan fitur e-commerce dan media sosial untuk memberdayakan UMKM di daerah pedesaan dan pedagang kaki lima.",
     longDescription:
       "Dikembangkan untuk kompetisi Gemastik, Umdara adalah purwarupa aplikasi web terpadu yang bertujuan menjembatani kesenjangan digital bagi UMKM pedesaan. Alih-alih hanya berfokus pada transaksi, Umdara membangun ekosistem komunitas digital inklusif yang memungkinkan para pemilik usaha untuk berjualan sekaligus berinteraksi langsung dengan pelanggan layaknya menggunakan media sosial.",
-  challenge:
-    "Merancang platform untuk pengguna yang sangat awam terhadap teknologi. Antarmuka aplikasi e-commerce pada umumnya sering kali terlalu rumit untuk diadaptasi oleh pedagang kaki lima dan UMKM pedesaan.",
-  solution:
-    "Melakukan riset lapangan dengan mewawancarai pedagang secara langsung untuk merancang UI yang sangat disederhanakan. Menggabungkan logika E-Commerce dengan Social Media dalam satu ekosistem agar alur interaksi terasa lebih akrab dan mudah dipahami.",
-  category: "Fullstack Web",
-  techStack: ["JavaScript", "Front-end", "Back-end", "UI/UX"],
-  image: "/projects/umdaraweb1.png",
-  images: [
-    "/projects/umdaraweb1.png",
-    "/projects/umdaraweb2.png",
-    "/projects/umdaraweb3.png",
-  ],
-  github: "https://github.com",
-  demo: "https://demo.com",
+    challenge:
+      "Merancang platform untuk pengguna yang sangat awam terhadap teknologi. Antarmuka aplikasi e-commerce pada umumnya sering kali terlalu rumit untuk diadaptasi oleh pedagang kaki lima dan UMKM pedesaan.",
+    solution:
+      "Melakukan riset lapangan dengan mewawancarai pedagang secara langsung untuk merancang UI yang sangat disederhanakan. Menggabungkan logika E-Commerce dengan Social Media dalam satu ekosistem agar alur interaksi terasa lebih akrab dan mudah dipahami.",
+    category: "Fullstack Web",
+    techStack: ["JavaScript", "Front-end", "Back-end", "UI/UX"],
+    image: "/projects/umdaraweb1.png",
+    images: [
+      "/projects/umdaraweb1.png",
+      "/projects/umdaraweb2.png",
+      "/projects/umdaraweb3.png",
+    ],
+    github: "https://github.com",
+    demo: "https://demo.com",
   },
   {
     id: 3,
@@ -93,14 +93,14 @@ export const projects: Project[] = [
     id: 4,
     title: "Space Gesture Controller",
     year: "2026",
-   description:
-    "Aplikasi computer vision interaktif yang menerjemahkan gestur tangan secara real-time menjadi partikel visual dan bentuk dinamis menggunakan OpenCV dan MediaPipe.",
+    description:
+      "Aplikasi computer vision interaktif yang menerjemahkan gestur tangan secara real-time menjadi partikel visual dan bentuk dinamis menggunakan OpenCV dan MediaPipe.",
     longDescription:
-    "Proyek ini mengeksplorasi interaksi manusia-komputer dengan memanfaatkan pelacakan tangan untuk mengontrol elemen visual di layar. Dibangun menggunakan Python, sistem ini menangkap tangkapan webcam melalui OpenCV, memproses landmark (titik referensi) tangan yang kompleks menggunakan MediaPipe, dan merender grafis berbasis partikel interaktif menggunakan Pygame. Sistem ini dapat beralih dengan mulus di antara berbagai mode visual—seperti bentuk Saturnus 3D, hati dari partikel, dan teks kustom—berdasarkan kombinasi jari tertentu (misalnya, 1 jari, 3 jari, atau kepalan tangan).",
+      "Proyek ini mengeksplorasi interaksi manusia-komputer dengan memanfaatkan pelacakan tangan untuk mengontrol elemen visual di layar. Dibangun menggunakan Python, sistem ini menangkap tangkapan webcam melalui OpenCV, memproses landmark (titik referensi) tangan yang kompleks menggunakan MediaPipe, dan merender grafis berbasis partikel interaktif menggunakan Pygame. Sistem ini dapat beralih dengan mulus di antara berbagai mode visual—seperti bentuk Saturnus 3D, hati dari partikel, dan teks kustom—berdasarkan kombinasi jari tertentu (misalnya, 1 jari, 3 jari, atau kepalan tangan).",
     challenge:
-    "Memastikan performa real-time tanpa lag sambil secara bersamaan menangkap frame video, menghitung koordinat landmark tangan, dan merender ratusan partikel dinamis dalam loop tampilan Pygame.",
+      "Memastikan performa real-time tanpa lag sambil secara bersamaan menangkap frame video, menghitung koordinat landmark tangan, dan merender ratusan partikel dinamis dalam loop tampilan Pygame.",
     solution:
-    "Mengimplementasikan logika pengenalan gestur yang efisien dengan menganalisis koordinat node dari MediaPipe untuk menghitung jari yang terangkat secara akurat. Mengoptimalkan loop rendering partikel Pygame untuk mempertahankan frame rate yang mulus di semua mode visual.",
+      "Mengimplementasikan logika pengenalan gestur yang efisien dengan menganalisis koordinat node dari MediaPipe untuk menghitung jari yang terangkat secara akurat. Mengoptimalkan loop rendering partikel Pygame untuk mempertahankan frame rate yang mulus di semua mode visual.",
     category: "Computer Vision & AI",
     techStack: ["Python", "OpenCV", "MediaPipe", "Pygame"],
     image: "/projects/projectpython1.png",
@@ -111,6 +111,25 @@ export const projects: Project[] = [
     ],
     github: "https://github.com",
     demo: "https://demo.com"
+  },
+  {
+    id: 5,
+    title: "Konstruksi Gudang Logistik & Struktur Baja",
+    year: "2024",
+    description:
+      "Pembangunan fasilitas gudang industri skala besar, mencakup pekerjaan fondasi, instalasi struktur baja IWF, hingga penyelesaian arsitektural dan MEP.",
+    longDescription:
+      "Proyek ini merupakan implementasi penuh dari layanan Konstruksi Sipil & Baja kami. Kami merancang, merencanakan, dan membangun infrastruktur gudang logistik dari nol. Prosesnya meliputi pemetaan lahan, pengerjaan fondasi yang kokoh, fabrikasi dan ereksi struktur baja berat (IWF), serta instalasi utilitas pabrik. Seluruh pekerjaan diawasi ketat dengan standar SNI dan dipantau menggunakan Kurva-S untuk memastikan proyek selesai tepat waktu tanpa mengorbankan kualitas dan keselamatan kerja (K3).",
+    challenge:
+      "Menghadapi target waktu penyelesaian yang sangat ketat di musim hujan, serta mendesain struktur lantai dan bangunan yang mampu menahan beban dinamis operasional alat berat (forklift/crane) di dalam area gudang.",
+    solution:
+      "Menerapkan sistem fabrikasi baja di luar lokasi (off-site) sehingga perakitan di lapangan jauh lebih cepat dan meminimalisir kendala cuaca. Kami juga mengoptimalkan perhitungan Rencana Anggaran Biaya (RAB) secara transparan sejak awal, dan menggunakan material beton serta baja bersertifikat SNI untuk menjamin ketahanan struktur jangka panjang.",
+    category: "Front-end website",
+    techStack: ["HTML", "CSS", "Tailwind CSS", "Javascript"],
+    image: "/projects/project-kontraktor.png",
+    images: ["/projects/project-kontraktor.png"],
+    github: "",
+    demo: "/projects/project-kontraktor.html"
   },
 ];
 
@@ -157,7 +176,7 @@ export const caseBases: Project[] = [
       "/projects/forensik4.png",
       "/projects/forensik5.png",
     ],
-    github: "", 
+    github: "",
     demo: ""
   },
   {
@@ -179,25 +198,25 @@ export const caseBases: Project[] = [
     demo: "https://demo.com"
   },
   {
-  id: 4,
-  title: "Penerapan Volatility dalam Memory Forensics",
-  year: "2026",
-  description: "Analisis forensik digital pada memory dump (RAM) menggunakan framework Volatility untuk mendeteksi anomali, aktivitas mencurigakan, dan artefak malware tersembunyi pada sistem.",
-  longDescription: "Proyek investigasi keamanan siber yang berfokus pada teknik memory forensics. Dengan memanfaatkan Volatility Framework, dilakukan ekstraksi dan analisis data volatil dari dump memori (RAM) untuk mengidentifikasi proses yang berjalan, koneksi jaringan yang aktif, serta potensi injeksi kode. Proyek ini bertujuan untuk menyusun kronologi insiden (incident response) dan menemukan bukti digital (artefak) tanpa merusak integritas data asli dari sistem yang terdampak.",
-  challenge: "Mengekstrak dan menginterpretasikan raw data dari memory dump yang kompleks, serta mendeteksi teknik penghindaran (evasion) seperti proses yang disembunyikan (process hollowing atau DKOM) oleh rootkit maupun malware dari pemantauan sistem operasi standar.",
-  solution: "Memanfaatkan berbagai plugin analisis pada Volatility (seperti pslist, psscan, netscan, dan malfind) untuk mengidentifikasi anomali, membandingkan daftar proses aktif dengan memori yang tersembunyi, dan mengekstrak segmen memori mencurigakan guna menemukan Indikator Kompromi (IoC).",
-  category: "Digital Forensics",
-  techStack: [
-    "Volatility Framework",
-    "Memory Forensics",
-    "Incident Response",
-    "Malware Analysis",
-    "Command Line (CLI)"
-  ],
-  image: "/projects/PENERAPAN VOLATILITY DALAM MEMORY FORENSICS UPDATE (1).pdf",
-  github: "#", 
-  demo: "#" 
-},
+    id: 4,
+    title: "Penerapan Volatility dalam Memory Forensics",
+    year: "2026",
+    description: "Analisis forensik digital pada memory dump (RAM) menggunakan framework Volatility untuk mendeteksi anomali, aktivitas mencurigakan, dan artefak malware tersembunyi pada sistem.",
+    longDescription: "Proyek investigasi keamanan siber yang berfokus pada teknik memory forensics. Dengan memanfaatkan Volatility Framework, dilakukan ekstraksi dan analisis data volatil dari dump memori (RAM) untuk mengidentifikasi proses yang berjalan, koneksi jaringan yang aktif, serta potensi injeksi kode. Proyek ini bertujuan untuk menyusun kronologi insiden (incident response) dan menemukan bukti digital (artefak) tanpa merusak integritas data asli dari sistem yang terdampak.",
+    challenge: "Mengekstrak dan menginterpretasikan raw data dari memory dump yang kompleks, serta mendeteksi teknik penghindaran (evasion) seperti proses yang disembunyikan (process hollowing atau DKOM) oleh rootkit maupun malware dari pemantauan sistem operasi standar.",
+    solution: "Memanfaatkan berbagai plugin analisis pada Volatility (seperti pslist, psscan, netscan, dan malfind) untuk mengidentifikasi anomali, membandingkan daftar proses aktif dengan memori yang tersembunyi, dan mengekstrak segmen memori mencurigakan guna menemukan Indikator Kompromi (IoC).",
+    category: "Digital Forensics",
+    techStack: [
+      "Volatility Framework",
+      "Memory Forensics",
+      "Incident Response",
+      "Malware Analysis",
+      "Command Line (CLI)"
+    ],
+    image: "/projects/PENERAPAN VOLATILITY DALAM MEMORY FORENSICS UPDATE (1).pdf",
+    github: "#",
+    demo: "#"
+  },
 ];
 
-export const categories = ["All", "Fullstack Web", "Mobile App Development", "Computer Vision & AI", "Digital Forensics", "Network Administration"] as const;
+export const categories = ["All", "Front-end website", "Fullstack Web", "Mobile App Development", "Computer Vision & AI", "Digital Forensics", "Network Administration"] as const;
