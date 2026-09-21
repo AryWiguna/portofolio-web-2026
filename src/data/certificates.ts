@@ -202,6 +202,102 @@ export const certificates: Certificate[] = [
   ],
   image: "/certificate/sertifikat12.png",
   credentialUrl: "#"
+},
+{
+  id: 14,
+  title: "Juara 2 Turnamen Tekken 8 - FANTASI 2026",
+  issuer: "HIMAPRODI TI - ITB STIKOM Bali",
+  date: "Februari 2026",
+  description: "Penghargaan Juara 2 pada ajang kompetisi E-Sport Tekken 8 dalam perhelatan FANTASI HIMAPRODISI ITB STIKOM Bali.",
+  longDescription: "Meraih Juara 2 dalam turnamen E-Sport Tekken 8 pada ajang FANTASI 2026 yang diselenggarakan oleh Himpunan Mahasiswa Program Studi Teknologi Informasi (HIMAPRODI TI) ITB STIKOM Bali. Kompetisi ini menguji ketangkasan strategi, refleks, pemahaman frame data, dan sportivitas dalam ranah gaming kompetitif.",
+  category: "Award",
+  skills: ["E-Sport", "Competitive Gaming", "Strategic Thinking", "Tekken 8", "Sportsmanship"],
+  image: "/certificate/sertifikat-tekken8.jpeg",
+  credentialUrl: "#"
+},
+{
+  id: 15,
+  title: "Seminar Kripto Sebagai Aset Masa Depan",
+  issuer: "INDODAX & ITB STIKOM Bali",
+  date: "Juni 2025",
+  description: "Sertifikat partisipasi seminar nasional mengenai teknologi blockchain, ekosistem kripto, dan aset digital masa depan bersama INDODAX.",
+  longDescription: "Diberikan kepada I Komang Ary Wiguna sebagai peserta seminar bertema \"Kripto Sebagai Aset Masa Depan\" yang diselenggarakan oleh INDODAX bekerja sama dengan Institut Teknologi dan Bisnis (ITB) STIKOM Bali Kampus Jimbaran pada 26 Juni 2025. Acara ini ditandatangani secara resmi oleh Oscar Darmawan (Co-Founder INDODAX) dan Ir. I Putu Gede Abdi Sudiatmika, S.Pd., M.Kom (Direktur ITB STIKOM Bali Kampus Jimbaran).",
+  category: "Seminar / Workshop",
+  skills: ["Cryptocurrency", "Blockchain Basics", "Digital Assets", "Financial Technology", "Web3"],
+  image: "/certificate/sertifikat-indodax.png",
+  credentialUrl: "#"
+},
+{
+  id: 16,
+  title: "Peserta Lomba Mobile Legends FESTIKA VI",
+  issuer: "HIMAS Jimbaran - ITB STIKOM Bali",
+  date: "Desember 2023",
+  description: "Sertifikat kepesertaan dalam kompetisi E-Sport Mobile Legends: Bang - Bang pada perhelatan festival FESTIKA VI.",
+  longDescription: "Diberikan kepada I Komang Ary Wiguna (JA234) sebagai peserta lomba kategori Mobile Legends: Bang - Bang pada acara FESTIKA VI yang diselenggarakan oleh HIMAS Jimbaran bertempat di ITB STIKOM Bali Kampus Jimbaran dan Lapangan Rangdu Kriya Mandala Kutuh pada tanggal 31 Oktober - 02 Desember 2023. Nomor Sertifikat: 52598/Srtf/KMHS/XII/2023.",
+  category: "Other",
+  skills: ["Mobile Legends", "Team Coordination", "E-Sport Tournament", "Communication", "Strategic Planning"],
+  image: "/certificate/sertifikat-mlbb-festika.png",
+  credentialUrl: "#"
+},
+{
+  id: 17,
+  title: "Sosialisasi Thailand Cross Culture Program",
+  issuer: "ITB STIKOM Bali Kampus Jimbaran",
+  date: "September 2023",
+  description: "Sertifikat atas partisipasi aktif dalam kegiatan sosialisasi program pertukaran budaya lintas negara Thailand Cross Culture Program.",
+  longDescription: "Diberikan kepada I Komang Ary Wiguna atas partisipasinya sebagai Peserta dalam kegiatan Sosialisasi Thailand Cross Culture Program yang diselenggarakan oleh ITB STIKOM Bali Direktorat Kampus Jimbaran pada tanggal 11 September 2023. Nomor Sertifikat: 162/DIRKJ/WRII/ITBSTIKOM/IX/2023.",
+  category: "Seminar / Workshop",
+  skills: ["Cross-Cultural Communication", "Global Networking", "International Programs", "Cultural Exchange"],
+  image: "/certificate/sertifikat-tccp.png",
+  credentialUrl: "#"
+},
+{
+  id: 18,
+  title: "Panitia Event Kuliah Industri 2025",
+  issuer: "ITB STIKOM Bali Kampus Jimbaran",
+  date: "Mei 2025",
+  description: "Sertifikat penghargaan atas kontribusi dan dedikasi sebagai panitia dalam menyukseskan event Kuliah Industri 2025 di Kampus Jimbaran.",
+  longDescription: "Diberikan kepada I Komang Ary Wiguna (NIM: 230040185) atas partisipasi dan kontribusi aktif sebagai Panitia pada event Kuliah Industri 2025 di ITB STIKOM Bali Kampus Jimbaran pada hari Jumat, 16 Mei 2025. Nomor Sertifikat: 129/DIRKJ/WRII/ITBSTIKOM/VI/25.",
+  category: "Committee / Volunteer",
+  skills: ["Event Management", "Organizing", "Team Collaboration", "Industry Networking", "Event Logistics"],
+  image: "/certificate/sertifikat-kulindus.jpeg",
+  credentialUrl: "#"
+},
+{
+  id: 19,
+  title: "Peserta Seminar Nasional GETEKSI 2024",
+  issuer: "HIMAPRODI TI - ITB STIKOM Bali",
+  date: "Mei 2024",
+  description: "Sertifikat partisipasi dalam Seminar Nasional GETEKSI 2024 bertema Exploring Future Frontiers: Embracing Technology in Our Daily Lives.",
+  longDescription: "Diberikan kepada I Komang Ary Wiguna sebagai Peserta dalam kegiatan Seminar Nasional GETEKSI 2024 dengan tema \"Exploring Future Frontiers: Embracing Technology in Our Daily Lives\" yang diselenggarakan oleh ITB STIKOM Bali dan HIMAPRODI TI pada tanggal 11 Mei 2024. Nomor Sertifikat: 8164/SRTF/KMHS/VI/2024.",
+  category: "Seminar / Workshop",
+  skills: ["Technology Frontiers", "Emerging Tech", "Digital Transformation", "Seminar Participation"],
+  image: "/certificate/sertifikat-geteksi.jpeg",
+  credentialUrl: "#"
+},
+{
+  id: 20,
+  title: "Peserta Lomba Mobile Legends INFINITY 2023",
+  issuer: "UKM PROGRESS - ITB STIKOM Bali",
+  date: "Oktober 2023",
+  description: "Sertifikat atas keikutsertaan sebagai peserta turnamen Mobile Legends dalam rangkaian kegiatan INFINITY 2023.",
+  longDescription: "Diberikan kepada I Komang Ary Wiguna sebagai Peserta Lomba Mobile Legends pada turnamen Mobile Legends dalam kegiatan INFINITY 2023 (Deep Dive Into The Technology) yang diselenggarakan pada 15 Oktober 2023. Nomor Sertifikat: 21591/Srtf/KMHS/X/2023.",
+  category: "Other",
+  skills: ["Mobile Legends", "Competitive Gaming", "Teamwork", "E-Sport Tournament"],
+  image: "/certificate/sertifikat-mlbb-infinity.png",
+  credentialUrl: "#"
+},
+{
+  id: 21,
+  title: "Seminar Indodax Goes to Campus 2024",
+  issuer: "INDODAX & ITB STIKOM Bali Kampus Jimbaran",
+  date: "Juni 2024",
+  description: "Sertifikat partisipasi seminar edukasi aset digital dan teknologi blockchain pada program Indodax Goes to Campus.",
+  longDescription: "Diberikan kepada I Komang Ary Wiguna atas partisipasinya sebagai peserta pada hari Rabu, 19 Juni 2024 dalam kegiatan Seminar Indodax Goes to Campus yang diselenggarakan di ITB STIKOM Bali Kampus Jimbaran. Nomor Sertifikat: 129/DIRKJ/WRII/ITBSTIKOM/VI/24.",
+  category: "Seminar / Workshop",
+  skills: ["Blockchain", "Cryptocurrency", "Digital Assets", "Financial Literacy"],
+  image: "/certificate/sertifikat-indodax-2024.jpeg",
+  credentialUrl: "#"
 }
 ];
 

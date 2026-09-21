@@ -60,19 +60,18 @@ export function Certificates() {
               <button
                 key={cat}
                 onClick={() => setActive(cat)}
-                className={`px-5 py-2 text-sm font-medium rounded-full transition-all duration-250 cursor-pointer ${
-                  active === cat
+                className={`px-5 py-2 text-sm font-medium rounded-full transition-all duration-250 cursor-pointer ${active === cat
                     ? "bg-accent text-white border-accent shadow-md shadow-accent/20"
                     : "hover:text-accent"
-                }`}
+                  }`}
                 style={
                   active === cat
                     ? { border: "1px solid var(--color-accent)" }
                     : {
-                        color: "var(--color-text-secondary)",
-                        backgroundColor: "var(--color-filter-inactive-bg)",
-                        border: "1px solid var(--color-border)",
-                      }
+                      color: "var(--color-text-secondary)",
+                      backgroundColor: "var(--color-filter-inactive-bg)",
+                      border: "1px solid var(--color-border)",
+                    }
                 }
               >
                 {cat}

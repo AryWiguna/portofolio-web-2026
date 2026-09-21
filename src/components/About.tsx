@@ -70,13 +70,13 @@ export function About() {
             className="leading-relaxed text-base sm:text-lg"
             style={{ color: "var(--color-text-secondary)" }}
           >
-            I&rsquo;m a 6th-semester IT student at{" "}
+            I&rsquo;m Ary Wiguna,{" "}
             <span style={{ color: "var(--color-text-primary)", fontWeight: 600 }}>
-              STIKOM Bali
+
             </span>{" "}
-            who loves turning complex problems into clean, intuitive interfaces.
-            My focus spans front-end development, UI/UX design, and lately,
-            exploring how Local AI can power smarter, privacy-first experiences.
+            a front-end developer and UI/UX designer bridging the gap between clean engineering and intuitive human experiences. I build fast,
+            responsive digital interfaces with a strong focus on usability and architecture. Recently,
+            I’ve been integrating Local AI into web workflows—bringing smarter, low-latency, and privacy-first features directly to the client side.
           </p>
         </motion.div>
 

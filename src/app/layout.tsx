@@ -8,7 +8,7 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 export const metadata: Metadata = {
   title: "Ary Wiguna — Front-End Developer & UI/UX Designer",
   description:
-    "Portfolio of Ary Wiguna, an IT student specializing in Front-End Development, UI/UX Design, and Local AI solutions.",
+    "Portfolio of Ary Wiguna, an engineer polished digital interfaces and thoughtful user experiences, UI/UX Design, and Local AI solutions.",
 };
 
 export default function RootLayout({

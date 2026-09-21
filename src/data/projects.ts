@@ -37,7 +37,7 @@ export const projects: Project[] = [
       "/projects/mlstoreweb4.png",
       "/projects/mlstoreweb5.png"
     ],
-    github: "https://github.com",
+    github: "https://github.com/AryWiguna",
     demo: "https://demo.com",
   },
   {
@@ -60,7 +60,7 @@ export const projects: Project[] = [
       "/projects/umdaraweb2.png",
       "/projects/umdaraweb3.png",
     ],
-    github: "https://github.com",
+    github: "https://github.com/AryWiguna",
     demo: "https://demo.com",
   },
   {
@@ -86,7 +86,7 @@ export const projects: Project[] = [
       "/projects/cashyapps5.png",
       "/projects/cashyapps6.png",
     ],
-    github: "https://github.com",
+    github: "https://github.com/AryWiguna",
     demo: "https://demo.com"
   },
   {
@@ -109,7 +109,7 @@ export const projects: Project[] = [
       "/projects/projectpython2.png",
       "/projects/projectpython3.png",
     ],
-    github: "https://github.com",
+    github: "https://github.com/AryWiguna",
     demo: "https://demo.com"
   },
   {
@@ -128,8 +128,34 @@ export const projects: Project[] = [
     techStack: ["HTML", "CSS", "Tailwind CSS", "Javascript"],
     image: "/projects/project-kontraktor.png",
     images: ["/projects/project-kontraktor.png"],
-    github: "",
+    github: "https://github.com/AryWiguna",
     demo: "/projects/project-kontraktor.html"
+  },
+  {
+    id: 6,
+    title: "Bali Lash Studio - Luxury Beauty & Lash Salon Web",
+    year: "2026",
+    description:
+      "Website profil studio kecantikan premium di Bali dengan estetika luxury, katalog layanan terstruktur, visualisasi transformasi interaktif, dan integrasi reservasi online.",
+    longDescription:
+      "Bali Lash Studio adalah platform website profil bisnis kecantikan kelas atas (luxury beauty salon) yang dirancang untuk menghadirkan pengalaman digital elegan, eksklusif, dan ramah pengguna bagi wisatawan lokal maupun mancanegara di Bali. Platform ini dilengkapi dengan visualisasi hasil nyata melalui interactive before-after transformation slider, panduan katalog gaya bulu mata (Lash Style Guide), menu treatment transparan dengan durasi dan harga, serta alur pemesanan janji temu (appointment booking) yang terintegrasi langsung ke WhatsApp.",
+    challenge:
+      "Menciptakan representasi visual digital yang memancarkan kesan mewah dan terpercaya tanpa memperlambat performa muat website, serta menyajikan perbandingan hasil treatment secara interaktif yang tetap mulus diakses di berbagai perangkat seluler.",
+    solution:
+      "Menerapkan desain modern berbasis React dan Tailwind CSS dengan palet warna warm neutral yang elegan, tipografi editorial premium (Playfair Display & DM Sans), serta komponen interaktif (interactive Before/After image comparison slider). Mengoptimalkan aset grafis dan arsitektur komponen modular agar navigasi cepat, responsif, dan langsung mengonversi pengunjung menjadi pemesanan melalui call-to-action reservasi.",
+    category: "Front-end website",
+    techStack: ["React", "TypeScript", "Tailwind CSS", "Lucide Icons", "Vite", "UI/UX Design"],
+    image: "/projects/balilash1.png",
+    images: [
+      "/projects/balilash1.png",
+      "/projects/balilash2.png",
+      "/projects/balilash3.png",
+      "/projects/balilash4.png",
+      "/projects/balilash5.png",
+      "/projects/balilash6.png"
+    ],
+    github: "https://github.com/AryWiguna",
+    demo: "https://bali-lash-studio-web.vercel.app/"
   },
 ];
 
@@ -153,7 +179,7 @@ export const caseBases: Project[] = [
       "/projects/forensik1.jpg",
       "/projects/forensik2.jpg",
     ],
-    github: "",
+    github: "https://github.com/AryWiguna",
     demo: "https://youtu.be/kkxJxYWEQiA"
   },
   {
@@ -176,7 +202,7 @@ export const caseBases: Project[] = [
       "/projects/forensik4.png",
       "/projects/forensik5.png",
     ],
-    github: "",
+    github: "https://github.com/AryWiguna",
     demo: ""
   },
   {
@@ -194,7 +220,7 @@ export const caseBases: Project[] = [
     category: "Network Administration",
     techStack: ["Cisco Packet Tracer", "Routing & Switching", "VLAN", "Subnetting", "Network Troubleshooting"],
     image: "/projects/Network Infrastructure Design.pdf",
-    github: "https://github.com",
+    github: "https://github.com/AryWiguna",
     demo: "https://demo.com"
   },
   {
@@ -214,7 +240,7 @@ export const caseBases: Project[] = [
       "Command Line (CLI)"
     ],
     image: "/projects/PENERAPAN VOLATILITY DALAM MEMORY FORENSICS UPDATE (1).pdf",
-    github: "#",
+    github: "https://github.com/AryWiguna",
     demo: "#"
   },
 ];

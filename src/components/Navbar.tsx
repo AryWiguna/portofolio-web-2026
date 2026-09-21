@@ -14,11 +14,13 @@ const navLinks = [
 ];
 
 export function Navbar() {
+  const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
+    setMounted(true);
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
@@ -70,11 +72,14 @@ export function Navbar() {
           {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
+            suppressHydrationWarning
             className="p-2 rounded-xl transition-all duration-200 hover:text-accent cursor-pointer text-[var(--color-text-secondary)] border border-[var(--color-border)]"
-            aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+            aria-label={mounted ? `Switch to ${theme === "light" ? "dark" : "light"} mode` : "Switch theme"}
           >
             <AnimatePresence mode="wait" initial={false}>
-              {theme === "light" ? (
+              {!mounted ? (
+                <div className="w-4 h-4" />
+              ) : theme === "light" ? (
                 <motion.div
                   key="moon"
                   initial={{ rotate: -90, opacity: 0 }}
@@ -103,10 +108,11 @@ export function Navbar() {
         <div className="md:hidden flex items-center gap-2">
           <button
             onClick={toggleTheme}
+            suppressHydrationWarning
             className="p-2 rounded-xl transition-all duration-200 cursor-pointer text-[var(--color-text-secondary)] border border-[var(--color-border)]"
-            aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+            aria-label={mounted ? `Switch to ${theme === "light" ? "dark" : "light"} mode` : "Switch theme"}
           >
-            {theme === "light" ? <Moon size={16} /> : <Sun size={16} />}
+            {!mounted ? <div className="w-4 h-4" /> : theme === "light" ? <Moon size={16} /> : <Sun size={16} />}
           </button>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
